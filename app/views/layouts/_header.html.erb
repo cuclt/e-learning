@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="col-md-6 offer" data-animate="fadeInDown">
+    <h3><%= link_to t("title"), root_path, class: "title" %></h3>
+  </div>
+  <div class="col-md-6" data-animate="fadeInDown">
+    <ul class="menu">
+      <% if logged_in? %>
+        <li>
+          <%= link_to @current_user.name, current_user, class: "fullname" %>
+        </li>
+        <li class="dropdown">
+          <%= link_to "#", class: "dropdown-toggle", "data-toggle": "dropdown" do %>
+            <% if @current_user.avatar.nil? %>
+              <%= image_tag "avatar.png", class: "img-circle" %>
+            <% else %>
+              <%= image_tag @current_user.avatar, class: "img-circle" %>
+            <% end %>
+            <span class="caret"></span>
+          <% end %>
+          <ul class="dropdown-menu">
+            <li><%= link_to t("profile"), current_user %></li>
+            <li><%= link_to t("user"), users_path %></li>
+            <li><%= link_to t("settings"), edit_user_path(current_user) %></li>
+            <% if @current_user.is_admin? %>
+              <li><%= link_to t("manager"), admin_root_path %></li>
+            <% end %>
+            <li class="divider"></li>
+            <li><%= link_to t("logout"), logout_path, method: "delete" %></li>
+          </ul>
+        </li>
+      <% else %>
+        <li><%= link_to t("signup"), signup_path, class: "btn btn-success btn-sm" %></li>
+        <li>
+          <%= link_to t("signin"), "#", class: "btn btn-success btn-sm",
+            data: {toggle: "modal", target: "#login-modal"} %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+<%= render "layouts/signin" %>

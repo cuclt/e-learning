@@ -1,0 +1,35 @@
+<% provide :title, @lesson.category.title %>
+<div class="col-sm-12">
+  <ul class="breadcrumb">
+    <li><%= link_to t("home"), root_path %></li>
+    <li><%= link_to t("categories"), categories_path %></li>
+    <li><%= t "lesson" %></li>
+  </ul>
+</div>
+<div class="col-md-12" id="customer-order">
+  <div class="box">
+    <h2><%= @lesson.category.title %></h2>
+    <hr>
+    <div class="table-responsive">
+      <%= form_for [@category, @lesson] do |f_lesson| %>
+        <div class="col-lg-12">
+          <%= f_lesson.fields_for :results, @lesson.results do |f_result| %>
+            <h5>
+              <strong><%= f_result.index + 1 %>. <%= f_result.object.question.name %></strong>
+            </h5>
+            <% f_result.object.question.answers.each do |answer| %>
+              <div class="form-group col-lg-12">
+                <%= f_result.radio_button :answer_id, answer.id, checked: false %>
+                <%= f_result.label "answer_id_#{answer.id}", answer.name,
+                  class: "font-weight-normal" %>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="col-lg-12 text-center">
+          <%= f_lesson.submit t("finish"), class: "btn btn-primary btn-sm" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

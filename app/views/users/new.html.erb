@@ -1,0 +1,30 @@
+<div class="col-md-12">
+  <div class="col-md-12 box">
+    <div class="col-md-6 col-sm-offset-3">
+      <h1 class="text-center"><%= t "signup" %></h1>
+      <hr>
+      <%= form_for @user do |f| %>
+        <%= render "shared/error_messages", object: f.object %>
+        <div class="form-group">
+          <%= f.label t("name") %>
+          <%= f.text_field :name, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label t("email") %>
+          <%= f.email_field :email, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label t("password") %>
+          <%= f.password_field :password, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label t("password_confirmation")%>
+          <%= f.password_field :password_confirmation, class: "form-control" %>
+        </div>
+        <div class="text-center">
+          <%= f.submit t("create_account"), class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

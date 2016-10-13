@@ -1,0 +1,30 @@
+<div class="col-sm-12">
+  <ul class="breadcrumb">
+    <li><%= link_to t("admin.manage"), admin_root_path %></li>
+    <li><%= t "create_question" %></li>
+  </ul>
+</div>
+<%= render "admin/layouts/left_bar" %>
+<div class="col-sm-9">
+  <div class="row box">
+    <div class="col-md-6 col-md-offset-3">
+      <h1><%= t "create_question" %></h1>
+      <%= form_for [:admin, @question] do |f| %>
+        <%= render "admin/shared/error_messages", object: f.object %>
+        <%= f.label t "question_name" %>
+        <%= f.text_field :"name", class: "form-control" %>
+        <%= f.label t "category" %>
+        <%= f.select "category_id", options_for_select(@categories.collect{
+          |category| [category.title, category.id]}),
+          class: "btn btn-default filter-categories" %>
+        <%= f.fields_for :answers do |answer_builder| %>
+          <%= render "answer_fields", f: answer_builder %>
+        <% end %>
+        <div class="add_fields">
+          <%= link_to_add_fields t("add_answer"), f, :answers %>
+        </div>
+        <%= f.submit t("save"), class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="col-sm-12">
+  <div class="col-sm-12 box">
+    <div class="col-sm-8 col-sm-offset-2">
+      <aside class="col-md-6">
+        <section class="user_info">
+          <p><em><%= gravatar_for @user %></em><br>
+          <strong><%= @user.name %></strong><br>
+          <code><%= @user.email %></code></p><br>
+          <% if @results.length > 0 %>
+            <samp><%= t "user_info" %><%= @results.length %> </samp>
+            <%= link_to t("words"), result_path(@user) %><br>
+            <samp><%= t "user_info" %><%= @user_lessons.length %> <%= t "categories" %></samp><br>
+          <% end %>
+        </section>
+      </aside>
+      <aside class="col-md-6 text-center start-lesson">
+        <%= link_to t("user_start"), categories_path, class: "btn btn-primary btn-lg"%>
+      </aside>
+    </div>
+  </div>
+</div>

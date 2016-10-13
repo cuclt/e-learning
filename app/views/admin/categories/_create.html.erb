@@ -1,0 +1,28 @@
+<div class="modal fade" id="create-modal" tabindex="-1" role="dialog"
+  aria-labelledby="Create" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"
+          aria-hidden="true">&times;</button>
+        <h4 class="modal-title text-center"><%= t "new_category" %></h4>
+      </div>
+      <%= form_for [:admin, @category], remote: true do |f| %>
+        <%= render "admin/shared/error_messages", object: f.object %>
+        <div class="modal-body">
+          <div class="form-group">
+            <%= f.text_field :title, class: "form-control",
+              placeholder: t("admin.category.new_category") %>
+          </div>
+          <div class="form-group">
+            <%= f.number_field :question_number, class: "form-control",
+              placeholder: t("admin.category.question_number") %>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <%= f.submit t("create"), class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

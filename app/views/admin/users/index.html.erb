@@ -1,0 +1,38 @@
+<div class="col-sm-12">
+  <ul class="breadcrumb">
+    <li><%= link_to t("home"), admin_root_path %></li>
+    <li><%= t "users" %></li>
+  </ul>
+</div>
+<%= render "admin/layouts/left_bar" %>
+<div class="col-sm-9">
+  <div class="row box">
+    <div class="col-sm-12">
+      <h3 class="pull-left"><%= t "users" %></h3>
+      <div class="pull-right">
+        <%= form_tag admin_users_path, method: :get, id: "admin_search" do %>
+          <%= render "admin/shared/form_search" %>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <div class="table-bordered">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th><%= t "users" %></th>
+              <th><%= t "name" %></th>
+              <th colspan="2"><%= t "email" %></th>
+            </tr>
+          </thead>
+          <tbody id="result_search">
+            <%= render "user" %>
+          </tbody>
+        </table>
+      </div>
+      <div class="pull-right">
+        <%= will_paginate @users %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="col-sm-3">
+  <div class="panel panel-default sidebar-menu">
+    <div class="panel-heading">
+      <h3 class="panel-title"><%= t "manage" %></h3>
+    </div>
+    <div class="panel-body">
+      <ul class="nav nav-pills nav-stacked">
+        <li class="<%= active_class admin_root_path %>">
+          <%= link_to admin_root_path do %>
+            <span class="glyphicon glyphicon-home"></span>
+            <%= t "home" %>
+          <% end %>
+        </li>
+        <li class="<%= active_class admin_categories_path %>">
+          <%= link_to admin_categories_path do %>
+            <span class="glyphicon glyphicon-th-list"></span>
+            <%= t "categories" %>
+          <% end %>
+        </li>
+        <li class="<%= active_class admin_users_path %>">
+          <%= link_to admin_users_path do %>
+            <span class="glyphicon glyphicon-user"></span>
+            <%= t "users" %>
+          <% end %>
+        </li>
+        <li class="<%= active_class admin_questions_path %>">
+          <%= link_to admin_questions_path do %>
+            <span class="glyphicon glyphicon-list"></span>
+            <%= t "list_question" %>
+          <% end %>
+        </li>
+        <li class="<%= active_class new_admin_question_path %>">
+          <%= link_to new_admin_question_path do %>
+            <span class="glyphicon glyphicon-pencil"></span>
+            <%= t "create_question" %>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

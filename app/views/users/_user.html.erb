@@ -1,0 +1,9 @@
+<li>
+  <% if user.avatar.nil? %>
+    <%= image_tag "avatar.png", class: "gravatar" %>
+  <% else %>
+    <%= image_tag user.avatar, class: "gravatar" %>
+  <% end %>
+  <%= link_to user.name, user %><br>
+  <%= user.email %>
+</li>

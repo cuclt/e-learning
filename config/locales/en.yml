@@ -1,0 +1,129 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  hello: "Hello world"
+  wellcom: "Wellcom to E-Learning System!"
+  please_signin: "Please signin!"
+  user_start: "Start lesson"
+  access_denied: "Access denied!"
+  title: "E-Learning System"
+  home: "Home"
+  signin: "Sign in"
+  signup: "Sign up"
+  edit_profile: "Edit profile"
+  signup_now: "Sign up now!"
+  or: "or"
+  forgot_password: "Forgot Password?"
+  remember_me: "Remember me"
+  email: "Email"
+  password: "Password"
+  name: "Name"
+  password_confirmation: "Password Confirmation"
+  copy: "2016"
+  website: "Website"
+  error_login: "Invalid email/password combination"
+  welcome: "Welcome to the page!"
+  error_massages: "Sign up fail, please try it again!"
+  signup_first: "You can sign up or sign in first"
+  urlavt: "https://secure.gravatar.com/avatar/#{gravatar_id}"
+  create_account: "Create my account"
+  categories: "Categories"
+  not_login: "Please login."
+  start_lesson: "Start"
+  title_category: "Title"
+  user_info: "You have finished: "
+  words: " words"
+  users: "Users"
+  all_user: "All user"
+  lesson: "Lesson"
+  fail_message: "Something went wrong. Please learn other lesson!"
+  all_word: "List of word"
+  time_exam: "Time"
+  word: "Word"
+  all: "All"
+  question_not_success: "As least one answer correct or one not correct!"
+  user_empty: "User not found!"
+  time:
+    formats:
+      default: "%Y-%m-%d %H:%M:%S"
+
+  finish: "Finish"
+  lesson_not_found: "Lesson not found!"
+  done_lesson: "Done lesson!"
+  result: "Result"
+  your_choose: "Your choose"
+  continue: "Continue"
+  category_not_found: "Category not found!"
+  word_learned: "List word learned"
+  edit: "Edit"
+  delete: "Delete"
+  categories_manager: "Categories Manager"
+  delete_successfully: "Delete successfully"
+  delete_not_successfully: "Delete not successfully"
+  category_not_exist: "Category not exist"
+  you_sure: "Are you sure?"
+  update_category_successfully: "Update category successfully"
+  update_category_not_successfully: "Update category not successfully"
+  save_changes: "Save changes"
+  edit_category: "Edit category"
+  update_the_category: "Update the category"
+  manager: "Manager"
+  error: "error"
+  error_explanation: "error_explanation"
+  error_msg: "The form contains"
+  user_is_not_admin: "You are not admin"
+  question_name: "Question name"
+  category: "Category"
+  answer_name: "Answer name"
+  is_correct: "Is correct"
+  save: "Save"
+  saved: "Saved"
+  save_not_success: "Save not successfully"
+  create_question: "Create question"
+  word_learned: "List word learned"
+  category_not_found: "Category not found!"
+  word_learned: "List word learned"
+  search: "Search..."
+  create: "Create"
+  add_answer: "Add answer"
+  remove_answer: "Remote answer"
+  profile_updated: "Profile updated"
+  admin:
+    manage: "Manage"
+    edit: "Edit"
+    delete: "Delete"
+    confirm_del: "You sure?"
+    user:
+      user_not_found: "User not found!"
+      user_del: "User deleted!"
+      user_del_fail: "User not deleted!"
+    category:
+      category_successfully: "Category create successfully!"
+      category_error_create: "Something went wrong!"
+      new_category: "New Category"
+      question_number: "Number of question"
+  list_question: "List question"
+  submit: "Submit"
+  question_not_exist: "Question not exist"
+  questions: "Questions"
+  edit_question: "Edit Question"
+  question_name: "Question name"

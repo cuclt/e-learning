@@ -1,0 +1,46 @@
+<div class="col-sm-12">
+  <ul class="breadcrumb">
+    <li><%= link_to t("admin.manage"), admin_root_path %></li>
+    <li><%= t "catrgories" %></li>
+  </ul>
+</div>
+<%= render "admin/layouts/left_bar" %>
+<div class="col-sm-9">
+  <div class="row box">
+   <div class="col-sm-12 nopadding">
+      <div class="col-sm-5">
+        <h3><%= t "categories" %></h3>
+      </div>
+      <div class="col-sm-7">
+        <div class="col-sm-4 nopadding">
+          <%= link_to t("add_new"), "#", class: "btn btn-primary",
+            data: {toggle: "modal", target: "#create-modal"}%>
+        </div>
+        <div class="col-sm-8">
+          <%= form_tag admin_categories_path, method: :get, id: "admin_search", class: "row" do %>
+            <%= render "admin/shared/form_search" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <div class="table-bordered">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th><%= t "categories" %></th>
+              <th colspan="3"><%= t "title_category" %></th>
+            </tr>
+          </thead>
+          <tbody id="result_search">
+            <%= render "category" %>
+          </tbody>
+        </table>
+      </div>
+      <div class="pull-right">
+        <%= will_paginate @categories %>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render "create" %>

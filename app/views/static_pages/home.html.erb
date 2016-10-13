@@ -1,0 +1,12 @@
+<div class="col-sm-12 container">
+  <div class="box home-content">
+    <div class="text-center">
+      <h1 class="home-title"><%= t "wellcom" %></h1>
+      <% if logged_in? %>
+        <%= link_to t("continue"), categories_path, class: "btn btn-primary"%>
+      <% else %>
+        <h3><%= t "please_signin" %></h3>
+      <% end %>
+    </div>
+  </div>
+</div>

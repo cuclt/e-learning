@@ -1,0 +1,43 @@
+<% provide :title, t("categories") %>
+<div class="col-sm-12">
+  <ul class="breadcrumb">
+    <li><%= link_to t("home"), root_path %></li>
+    <li><%= t "categories" %></li>
+  </ul>
+</div>
+<div class="col-md-12" id="customer-order">
+  <div class="box">
+    <h2><%= t "categories" %></h2>
+    <hr>
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th><%= t "categories" %></th>
+            <th><%= t "title_category" %></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @categories.each_with_index do |category, index| %>
+            <tr>
+              <td>#<%= current_index Settings.per_page, index,
+                @categories.current_page %>
+              </td>
+              <td><%= category.title %></td>
+              <td>
+                <%= form_for [category, @lesson] do |f| %>
+                  <%= f.submit t("start_lesson"), class: "btn btn-primary btn-sm" %>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <div class="pull-right">
+        <%= will_paginate @categories %>
+      </div>
+    </div>
+  </div>
+</div>
+

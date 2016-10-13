@@ -1,0 +1,14 @@
+<% @categories.each_with_index do |category, index| %>
+  <tr>
+    <td>#<%= current_index Settings.per_page, index, @categories.current_page %></td>
+    <td><%= category.title %></td>
+    <td>
+      <%= link_to t("edit"), edit_admin_category_path(category.id),
+        class: "btn btn-primary btn-sm" %>
+    </td>
+    <td>
+      <%= link_to t("delete"), admin_category_path(category.id), method: :delete,
+        class: "btn btn-danger btn-sm", data: {confirm: t("admin.confirm_del")} %>
+    </td>
+  </tr>
+<% end %>
